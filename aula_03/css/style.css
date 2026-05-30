@@ -1,0 +1,109 @@
+/* 
+AULA 03 - CSS PARA PÁGINA DE RECEITA
+
+
+TÓPICOS PRINCIPAIS
+
+1. Estilos globais
+2. Container de receita
+3. Títulos e seções
+4. Listas flexiveis
+5. Tabelas responsivas
+6. Media Queries
+*/
+
+/* Estilos Globais */
+
+/* Reset do css padrão do navegador */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fdfcf0;
+    padding: 15px;
+    color: #4a3728;
+}
+
+/* CONTAINER DE RECEITA */
+.recipe-container {
+    background: #ffff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0,0, 0.05);
+}
+
+/* TÍTULOS E SEÇÕES */
+
+h1 {
+    text-align: center; /*Titulo centralizado*/
+    color: #d35400;
+    font-size: 1.5rem;
+}
+
+
+/* LISTAS FLEXIVEIS */
+
+.flex-list {
+    display: flex; /*ativa o modelo flexbox para esse elemento*/
+    flex-direction: column; /* alinha a direção dos itens ( coluna itens empilhados e row itens lado a lado*/
+    gap: 10px;/*Espaçamento entre itens*/
+    list-style: none; /*Remove o marcador da lista*/
+}
+
+/*Estilo de cada item da lista*/
+.flex-list li {
+    background: #fff3e0;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/*SEÇÔES*/
+.info {
+    /* Se a tela ficar muito larga em mobile, permite scroll horizontal */
+    overflow-x: auto;
+}
+table{
+    width: 100%; /*ocupar 100% a largura disponivel*/
+    min-width: 300px; /* largura mininma*/
+
+    border-collapse: collapse; /*remover o espaço entre as bordas da célula*/
+    margin-top: 20px; /*espaçamento acima da tabela*/
+
+}
+
+th, td {
+    padding: 10px;  /*espaçamento interno*/
+    font-size: 0.9rem; /*tamanho da fontem em mobile*/
+    border-bottom: 1px solid #eee; /*linha divisoria entre as celulas*/
+}
+
+/*media query: tablet/desktop*/
+
+@media (min-width: 768px) {
+    .recipe-container{ max-width: 800px;
+    margin: 0 auto; /*centralizou horizontalmente*/
+    padding: 40px; /* mais espaço interno*/
+    }
+    h1{
+        font-size: 2.2rem; /*tamanho do titulo*/
+        }
+    .flex-list{
+        flex-direction: row; /*esta deixando a direção em linhas*/
+        justify-content: center; /* centralizou horizontalmente os ingredientes*/
+        
+    }
+
+    .flex-list li {
+        padding: 10px 20px;
+        border-radius: 100px;
+    }
+    th, td{
+        padding: 15px;
+        font-size: 1rem;
+    }
+}
