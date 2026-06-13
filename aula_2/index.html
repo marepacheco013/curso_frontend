@@ -1,0 +1,60 @@
+<!doctype html>
+
+<!-- Aula 02 - Cartão de Produtos
+    Objetivo: Criar um cartão de Produto responsivo usando CSS FlexBox e estilos avançados
+
+-->
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aula 02 - Cartão de Produto</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <!-- Area do nosso conteudo principal -->
+    <main>
+      <!-- 
+            CONTAINER PRINCIPAL
+            Div wrapper usada para centralizar o cartão na pagina
+            O css (display: flex) vai centralizar este elemento
+        -->
+
+      <div class="container">
+        <!-- 
+            CARTÃO DE PRODUTO (Product Card)
+            Estrutura que contém: imagem, titulo, descrição, preço e botão de compra.
+            Este é um padrão comum em e-comerce
+        -->
+        <div class="product-card">
+          <!-- IMAGEM DO PRODUTO -->
+          <!-- 
+          src: URL da imagem 
+          alt: Texto alternativo ( importante para acessibilide e SEO)
+          -->
+          <img src="./img/OIP.webp" alt="Produto" />
+
+          <!-- 
+          CONTEÚDO INTERNO DO CARTÃO
+          -->
+          <div class="card-content">
+            <!-- Titulo do produto -->
+            <h3>Smartphone Tech X</h3>
+
+            <!-- Descrição do Produto -->
+            <p>
+              O smartphone mais avançado do mercado, com câmera de 108MP e
+              bateria de longa duração.
+            </p>
+
+            <!-- Preço do produto ( com classe especial para estilização) -->
+            <span class="price">R$ 2.999,00</span>
+
+            <a href="#" class="buy-btn">Comprar Agora</a>
+          </div>
+        </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

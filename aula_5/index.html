@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AULA 5 - LAYOUT DE NOTICIAS</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <!-- cabeçalho da pagina -->
+    <header class="main-header">
+        <!-- logo do site-->
+        <div class="logo"> Tec News</div>
+        <!-- tag de navegação= tag: nav (é a tag usada para navegação)-->
+        <nav>
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">GADGETS</a></li>
+                <li><a href="#">SOFTWERE</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!--wrapper do layout (flex: colum no mibile e row: no desktop)-->
+
+    <div class="layout-wrapper">
+        <!-- conteudo principal da nossa página-->
+        <!-- sessão semantica para conteudo principal: tag=main-->
+        <main class="content">
+            <!-- tag para ARTIGOS/POSTS (article)-->
+            <article class="post">
+                <h1>O futuro da INTELIGENCIA ARTIFICIAL em 2026</h1>
+                <img src="./img/image.png" alt="IA">
+
+                <p>A inteligencia artificial atingiu um novo patamar de integração ao nosso cotidiano</p>
+                <p>Novos modelos multimodais permitem interações naturais e eficientes.</p>
+
+            </article>
+        </main>
+
+        <!-- barra lateral (aside/sidebar)-->
+        <!--seção semantica para conteudos secundários, que são as barras laterais-->
+        <aside class="sidebar">
+            <h3>MAIS LIDAS</h3>
+            <ul class="sidebar-list">
+                <li><a href=""> Lançamento do novo IPhone</a></li>
+                <li><a href=""> Dicas dee CSS Grid</a></li>
+                <li><a href=""> O que é Web3?</a></li>
+            </ul>
+        </aside>
+
+
+    </div>
+
+    <footer class="main-footer">
+        <p>&copy;2026 TecNews - Todos os direitos reservados</p>
+    </footer>
+</body>
+</html>

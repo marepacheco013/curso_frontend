@@ -48,6 +48,7 @@ body{
         text-align: center;
         font-size: 1.4rem;
         color: #333;
+        margin-bottom: 25px;
         
     }
 
@@ -72,4 +73,38 @@ body{
         border-radius: 6px;
         font-size: 1rem;
         
+    }
+
+    button {
+        width: 100%;
+        padding: 15px;
+        background-color: pink;
+        color: rgb(2, 0, 3);
+        border: none;
+        border-radius: 6px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+
+    /*Media Query*/
+
+    @media (min-width: 768px) {
+        body{
+            align-items: center;
+            /*gradiente do fundo*/
+            background: linear-gradient(135deg, pink 0% rgb(218, 49, 195 100%));
+        }
+
+        .form-wrapper{ 
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(15,0,0,0.2)
+            
+        }
+
+        button:hover {
+
+            background: rgb(184, 30, 102);
+            cursor: pointer;
+        }
     }
