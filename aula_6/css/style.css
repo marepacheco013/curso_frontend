@@ -1,0 +1,125 @@
+/* 
+AULA 6 - CSS PARA GALERIA RESPONSIVA
+TOPICOS PRINCIPAIS:
+- Grid responsavel com flex box
+- Overlay com posição absoluta 
+- Object-fit para imagnes
+- Animações apenas para desktop
+- multiplas media queries
+*/
+
+/* ESTILOS GLOBAIS */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212;
+    color: white;
+    padding: 30px 15px;
+}
+
+/* Titulo da Galeria */
+
+h1{
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+/* Grid da Galeria */
+
+.grid{
+    /* FLEX BOX: criar um Grid com flex-wrap
+    esse é um padrão para criar grids responsivas sem CSS grid
+     */
+
+    display: flex;
+    flex-wrap: wrap;   /* quebra a linha autmaticamente quando os intens não cabem*/
+    gap: 15px;
+    justify-content: center;
+    
+}
+
+/* Itens da Galeria */
+
+.item{
+    /* position: relative cria um contexto de posicionamento para o oerrlay ser posicionado em relação a este elemento e não ao viewport */
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden; /* garante que as imagens/overlays não vazem para fora das bordas */
+    border-radius: 10px;
+}
+
+.item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* faz a imagem preencher o espaço sem distorcer, se necessário ele corta a imagem nas laterais*/
+}
+
+/* Overlay (camada de texto sobre a imagem) */
+
+.Overlay{
+    position: absolute; /* posicionar o Overlay SOBRE a imagem (no topo da pilha de elementos)
+    a posição é relativa ao .item (que tem position:relative) */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /*fundo semi-transparente*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+
+}
+
+/* Media Query: Tablet (600px+) */
+
+@media (min-width:600px) {
+
+    /* calc(50% - 15px) 
+    - 50% de largura do grid
+    - menos 15px (metade do gap de 30px) para não exceder a largura
+    - resultado: 2 colunas com espaço entre elas
+    */
+    .item{
+        width: calc(50% - 15px);
+    }
+}
+
+@media (min-width: 1024px) {
+body{ 
+    padding: 50px;
+}
+h1{
+    font-size: 2.5rem;
+}
+
+.item {
+    width: calc(33.333% - 15px);
+}
+.item img {
+    /* define a transição 0.5s para a propriedade transform*/
+    transition: transform 0.5s ease;
+}
+
+.item:hover img{
+    transform: scale(1.1);
+}
+
+.Overlay{
+    opacity: 0;
+    transition: opacity 0.3x ease;
+    background: #rgba(0, 0, 0, 0.7);
+}
+
+.item:hover .Overlay{
+opacity: 1;
+}
+}
